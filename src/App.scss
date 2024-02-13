@@ -1,0 +1,76 @@
+#root {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+$green: #03a903;
+$red: #d50f0f;
+
+.app {
+  padding: 70px 20px 0;
+  font-family: "Poppins", sans-serif;
+  margin: auto;
+  place-self: center;
+  display: grid;
+  gap: 10px;
+  place-content: center;
+}
+
+.img-container {
+  width: 350px;
+  margin: auto;
+  img {
+    width: 100%;
+  }
+}
+
+.question {
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.buttons {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+
+  button {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25%;
+    width: fit-content;
+    box-shadow: 0 4px 5px 2px grey;
+
+    &:hover {
+      cursor: pointer;
+      translate: 0 -8%;
+      transition: all 0.2s;
+    }
+  }
+}
+
+.yes {
+  background-color: $green;
+  &:hover {
+    background-color: darken($color: $green, $amount: 5);
+  }
+}
+.no {
+  background-color: $red;
+  &:hover {
+    background-color: darken($color: $red, $amount: 5);
+  }
+}
+
+.disappear {
+  display: none;
+}

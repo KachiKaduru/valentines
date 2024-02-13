@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+const data = ["No", "Are you sure", "Think again", "nahh", "nope"];
+const img = ["cute-love-bear-roses-ou7zho5oosxnpo6k.gif", "bear-kiss-bear-kisses.gif"];
 
 function App() {
+  const [btn, setBtn] = useState(0);
+  const [fontSize, setFontSize] = useState(20);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [clicked, setClicked] = useState(true);
+
+  function handleNoBtn() {
+    setBtn(btn + 1);
+    setFontSize(fontSize * 1.3);
+    if (btn === data.length - 1) {
+      const currentPosition = data.length - 1;
+      setBtn(btn - currentPosition);
+    }
+  }
+
+  function handleYesBtn() {
+    setCurrentImage(currentImage + 1);
+    setClicked(!clicked);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="img-container">
+        <img src={img[currentImage]} alt="Bears Kissing" />
+      </div>
+
+      {clicked && (
+        <div className="question">
+          <h2>Will you be my Valentine? 😍</h2>
+
+          <div className="buttons">
+            <button className="yes" style={{ fontSize: `${fontSize}px` }} onClick={handleYesBtn}>
+              Yes
+            </button>
+            <button className="no" onClick={handleNoBtn}>
+              {data[btn]}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
