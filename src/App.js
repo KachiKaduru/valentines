@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const data = ["No", "Are you sure", "Think again", "nahh", "nope"];
+const data = ["No", "Are you sure", "Think again", "Why nau?", "I no gree", "Be serious na"];
 const img = ["cute-love-bear-roses-ou7zho5oosxnpo6k.gif", "bear-kiss-bear-kisses.gif"];
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
       {clicked && (
         <div className="question">
-          <h2>Will you be my Valentine? 😍</h2>
+          <h2>Lolo, will you be my Valentine? 😍</h2>
 
           <div className="buttons">
             <button className="yes" style={{ fontSize: `${fontSize}px` }} onClick={handleYesBtn}>
